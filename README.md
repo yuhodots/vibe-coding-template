@@ -4,6 +4,8 @@ A modern, modular full-stack application starter template with NextJS frontend a
 
 Contains all the common boilerplate features. Just add the README.md and CONTEXT.md files to AI coding agent's context.
 
+Dont waste your time and tokens on boilerplate code. Use it to build your app
+
 ## Features
 
 ### Backend (Python FastAPI)
