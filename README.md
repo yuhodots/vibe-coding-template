@@ -41,7 +41,7 @@ Contains all the common boilerplate features. Just add the README.md and CONTEXT
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/sameershenai/vibe-coding-boilerplate
+   git clone https://github.com/humanstack/vibe-coding-boilerplate
    cd vibe-coding-boilerplate
    ```
 
