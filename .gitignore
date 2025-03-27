@@ -1,0 +1,65 @@
+
+.env
+.env.*
+!.env.example
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+/frontend/node_modules
+**/node_modules
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+/backend/env/
+/backend/venv/
+/backend/.venv/
+# Build files
+/dist
+/build
+/frontend/.next/
+/frontend/out/
+/frontend/build
+**/*.min.js
+**/*.min.css
+/backend/build/
+/backend/dist/
+/backend/*.egg-info/
+
+# Caches and logs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+next-env.d.ts
+.vercel
+.turbo
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Docker and databases
+.docker/data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Qdrant data directory
+qdrant_data/
