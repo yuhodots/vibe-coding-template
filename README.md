@@ -1,6 +1,8 @@
-# Full Stack Application Boilerplate
+# Full Stack Vibe Coding Template
 
-A modern, modular full-stack application starter template with NextJS frontend and Python FastAPI backend.
+A modern, modular full-stack application starter template with NextJS frontend and Python FastAPI backend, supabase backend for Vibe coding.
+
+Contains all the common boilerplate features. Just add the README.md and CONTEXT.md files to AI coding agent's context.
 
 ## Features
 
