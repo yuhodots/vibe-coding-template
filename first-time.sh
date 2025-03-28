@@ -195,6 +195,21 @@ print_message "frontend/.env.local - Frontend environment file"
 print_header "Setup Complete"
 print_message "Your environment is now ready to use!"
 
+# Database migrations information
+print_header "Database Migrations"
+print_message "The boilerplate supports database migrations using Supabase CLI."
+print_message "To use database migrations, you'll need to install Supabase CLI:"
+echo -e "  ${GREEN}brew install supabase/tap/supabase${NC}  (macOS)"
+print_message "For other platforms, see: https://supabase.com/docs/guides/cli"
+print_message "After installing the CLI, you'll need to link to your Supabase project:"
+echo -e "  ${GREEN}supabase login${NC}"
+echo -e "  ${GREEN}supabase link${NC}"
+print_message "Then you can manage migrations with these commands:"
+echo -e "  ${GREEN}make db-migration-new name=create_my_table${NC}  (Create a new migration)"
+echo -e "  ${GREEN}make db-apply${NC}                               (Apply migrations to remote)"
+echo -e "  ${GREEN}make db-status${NC}                              (Check migration status)"
+print_message "For more information, see the supabase/README.md file."
+
 echo -e "${CYAN}"
 cat << "EOF"
  _   _            _     _____

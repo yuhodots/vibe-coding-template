@@ -15,6 +15,7 @@ Dont waste your time and tokens on boilerplate code. Use it to build your app
   - Database connectivity
   - Realtime subscriptions
   - Storage management
+  - Database migrations
 - **LLM Integration**
   - OpenAI and Claude support
   - Abstracted LLM service
@@ -38,6 +39,7 @@ Dont waste your time and tokens on boilerplate code. Use it to build your app
 - Make
 - Node.js 18+ (for local frontend development)
 - Python 3.10+ (for local backend development)
+- Supabase CLI (for database migrations, install with `brew install supabase/tap/supabase` or see [Supabase CLI docs](https://supabase.com/docs/guides/cli))
 
 ### Quick Start
 
@@ -115,6 +117,11 @@ For detailed instructions on setting up authentication providers (Google, Linked
 │   ├── services/             # API services
 │   ├── FRONTEND-CONTEXT.md   # Frontend documentation
 │
+├── supabase/                 # Supabase configuration
+│   ├── migrations/           # Database migrations
+│   ├── seed.sql              # Database seed data
+│   └── README.md             # Migrations documentation
+│
 ├── docker-compose.yml        # Docker configuration
 ├── Makefile                  # Project commands
 ├── first-time.sh             # Setup script
@@ -140,6 +147,16 @@ For detailed instructions on setting up authentication providers (Google, Linked
 ### Cleanup
 
 - Clean up containers: `make clean`
+
+### Database Migrations
+
+- Create a migration: `make db-migration-new name=create_table`
+- Apply migrations to remote: `make db-apply`
+- List applied migrations: `make db-list`
+- Check pending migrations: `make db-status`
+- Push migrations (same as apply): `make db-push`
+
+See `supabase/README.md` for more details on database migrations.
 
 ## Documentation
 

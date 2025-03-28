@@ -63,3 +63,8 @@ Thumbs.db
 
 # Qdrant data directory
 qdrant_data/
+
+# Supabase
+.supabase
+supabase/.branches
+supabase/.temp

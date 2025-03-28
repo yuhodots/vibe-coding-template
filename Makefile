@@ -1,4 +1,5 @@
 .PHONY: dev dev-frontend dev-backend prod prod-frontend prod-backend clean help
+.PHONY: db-migration-new db-apply db-list db-push db-status
 
 # Default target
 .DEFAULT_GOAL := help
@@ -6,6 +7,7 @@
 # Colors for terminal output
 GREEN=\033[0;32m
 YELLOW=\033[0;33m
+RED=\033[0;31m
 NC=\033[0m # No Color
 
 # Development environment
@@ -53,6 +55,32 @@ build-frontend: ## Build frontend for production
 install-backend: ## Install backend dependencies locally
 	@echo "${GREEN}Installing backend dependencies...${NC}"
 	cd backend && pip install -r requirements.txt
+
+# Supabase database migrations (all for remote database)
+db-migration-new: ## Create a new migration file (Usage: make db-migration-new name=create_users_table)
+	@echo "${GREEN}Creating new migration file: $(name)${NC}"
+	supabase migration new $(name)
+
+db-apply: ## Apply pending migrations to the remote database
+	@echo "${GREEN}Applying pending migrations to remote database...${NC}"
+	supabase db push
+
+db-list: ## List all applied migrations on the remote database
+	@echo "${GREEN}Listing applied migrations on remote database...${NC}"
+	supabase migration list
+
+db-push: ## Push migrations to remote Supabase project (same as db-apply)
+	@echo "${GREEN}Pushing migrations to remote project...${NC}"
+	supabase db push
+
+db-status: ## Show pending migrations status
+	@echo "${GREEN}Checking migration status...${NC}"
+	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+	@echo "${YELLOW}Migration status (via supabase migration list):${NC}"
+	@supabase migration list || echo "  Failed to get migration status"
+	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+	@echo "${YELLOW}Migration files in project:${NC}"
+	@ls -1 supabase/migrations/*.sql 2>/dev/null | sed 's/.*\//  /' || echo "  None"
 
 # Help command
 help: ## Show this help
