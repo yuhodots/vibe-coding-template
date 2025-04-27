@@ -30,7 +30,7 @@ This document provides a comprehensive guide to using the Qdrant Python Client f
 Qdrant Python Client can be installed using pip:
 
 ```bash
-pip install qdrant-client
+uv add qdrant-client
 ```
 
 ## Client Initialization

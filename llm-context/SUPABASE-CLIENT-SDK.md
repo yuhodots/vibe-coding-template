@@ -28,7 +28,7 @@ This document provides a comprehensive guide to using the Supabase Python SDK (`
 ## Installation
 
 ```bash
-pip install supabase
+uv add supabase
 ```
 
 ## Initialization

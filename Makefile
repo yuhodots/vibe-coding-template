@@ -54,7 +54,7 @@ build-frontend: ## Build frontend for production
 # Backend helpers
 install-backend: ## Install backend dependencies locally
 	@echo "${GREEN}Installing backend dependencies...${NC}"
-	cd backend && pip install -r requirements.txt
+	cd backend && uv venv && uv pip install .
 
 # Supabase database migrations (all for remote database)
 db-migration-new: ## Create a new migration file (Usage: make db-migration-new name=create_users_table)

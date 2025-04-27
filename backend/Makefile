@@ -10,7 +10,7 @@ NC=\033[0m # No Color
 
 install: ## Install dependencies
 	@echo "${GREEN}Installing dependencies...${NC}"
-	pip install -r requirements.txt
+	uv venv && uv pip install .
 
 dev: ## Run development server
 	@echo "${GREEN}Starting development server...${NC}"
