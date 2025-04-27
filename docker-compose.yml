@@ -38,7 +38,7 @@ services:
       - QDRANT_API_KEY=${QDRANT_API_KEY}
       - QDRANT_COLLECTION_NAME=${QDRANT_COLLECTION_NAME}
       - CORS_ORIGINS=http://localhost:3000,http://frontend:3000,http://127.0.0.1:3000
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    command: uv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     networks:
       - app-network
 

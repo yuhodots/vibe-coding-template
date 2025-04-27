@@ -10,6 +10,7 @@ Dont waste your time and tokens on boilerplate code. Use it to build your app
 
 ### Backend (Python FastAPI)
 - **FastAPI REST API** - Fast, type-checked API development
+- **Modern Package Management** - Using uv for faster and more reliable dependency management
 - **Supabase Integration**
   - Authentication (Google, LinkedIn, Email/Password)
   - Database connectivity
